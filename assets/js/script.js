@@ -100,6 +100,50 @@ document.addEventListener("DOMContentLoaded", () => {
         playerMoves = 0;
     };
 
+    // Function to initiate the computer's turn
+    window.playAgainstComputer = function () {
+        status.textContent = "Playing against Computer";
+        document.querySelectorAll(".cell").forEach(cell => cell.removeEventListener("click", handleCellClick));
+
+        // Function for the computer's turn
+        function computerTurn() {
+            let emptyCells = gameBoard.reduce((acc, value, index) => {
+                if (value === "") {
+                    acc.push(index);
+                }
+                return acc;
+            }, []);
+
+            // Choose a random empty cell for the computer
+            if (emptyCells.length > 0) {
+                let randomIndex = Math.floor(Math.random() * emptyCells.length);
+                let computerMove = emptyCells[randomIndex];
+
+                // Update the game board and check for a winner or draw
+                gameBoard[computerMove] = currentPlayer;
+                updateBoard();
+
+                if (checkWinner()) {
+                    status.textContent = "Computer wins!";
+                } else if (gameBoard.every(cell => cell !== "")) {
+                    status.textContent = "It's a draw!";
+                } else {
+                    // Switch to the player's turn
+                    currentPlayer = currentPlayer === "X" ? "O" : "X";
+                    status.textContent = `Player ${currentPlayer}'s turn`;
+                    // Enable player's turn after computer's turn
+                    document.querySelectorAll(".cell").forEach(cell => cell.addEventListener("click", handleCellClick));
+                }
+            }
+        }
+
+        // Enable computer's turn only if the player has chosen to play against the computer
+        if (computerTurnEnabled) {
+            // Trigger computer's turn after the player's second move
+            setTimeout(computerTurn, 1000);
+        }
+    };
+
 
 
 
