@@ -149,8 +149,10 @@ document.addEventListener("DOMContentLoaded", () => {
         computerTurnEnabled = true;
     };
 
-
-
-
+    // Function to navigate back to the home page
+    window.goHome = function () {
+        window.location.href = "index.html";
+    };
+    
 
     });
