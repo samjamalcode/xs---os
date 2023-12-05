@@ -144,6 +144,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // Function to enable computer's turn when clicking the "Computer" button
+    window.enableComputerTurn = function () {
+        computerTurnEnabled = true;
+    };
+
 
 
 
