@@ -67,3 +67,24 @@ h1 {
     margin-bottom: 20px;
     color: #333;
 }
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #ff0400;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #8b0000;
+}
+
+/* Visited button style */
+button:visited {
+    background-color: #8b0000;
+}
