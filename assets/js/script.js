@@ -14,3 +14,4 @@ document.addEventListener("DOMContentLoaded", () => {
         cell.addEventListener("click", () => handleCellClick(i));
         board.appendChild(cell);
     }
+    });
