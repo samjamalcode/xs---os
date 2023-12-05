@@ -42,3 +42,28 @@ h1 {
     justify-content: center;
     cursor: pointer;
 }
+
+/* Cell hover effect */
+.cell:hover {
+    background-color: #f2f2f2;
+}
+
+.cell.X {
+    color: red;
+}
+
+.cell.O {
+    color: red;
+}
+
+.cell.winner {
+    background-color: #ffcccb;
+}
+
+.status {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #333;
+}
