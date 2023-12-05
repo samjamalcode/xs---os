@@ -11,3 +11,22 @@ body {
     margin: 0;
     background-color: #f0f0f0;
 }
+
+/* Container styling */
+.container {
+    text-align: center;
+}
+
+/* Header 1 styling */
+h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Game board styling */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+}
