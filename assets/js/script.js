@@ -14,4 +14,34 @@ document.addEventListener("DOMContentLoaded", () => {
         cell.addEventListener("click", () => handleCellClick(i));
         board.appendChild(cell);
     }
+    // Function to handle a player's move when a cell is clicked
+    function handleCellClick(index) {
+        // Check if the clicked cell is empty and the game is still ongoing
+        if (gameBoard[index] === "" && !checkWinner()) {
+            // Update the game board with the current player's move
+            gameBoard[index] = currentPlayer;
+            updateBoard();
+            playerMoves++;
+
+            // Check for a winner or a draw
+            if (checkWinner()) {
+                status.textContent = `${currentPlayer} wins!`;
+            } else if (gameBoard.every((cell) => cell !== "")) {
+                status.textContent = "It's a draw!";
+            } else {
+                // Switch to the other player's turn
+                currentPlayer = currentPlayer === "X" ? "O" : "X";
+                status.textContent = `Player ${currentPlayer}'s turn`;
+
+                // Enable computer's turn after player's second move
+                if (computerTurnEnabled && currentPlayer === "O" && playerMoves >= 2) {
+                    setTimeout(window.playAgainstComputer, 1000);
+                }
+            }
+        }
+    }
+
+
+    
+
     });
