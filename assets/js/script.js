@@ -40,8 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
+    // Function to update the visual representation of the game board
+    function updateBoard() {
+        let cells = document.querySelectorAll(".cell");
+        cells.forEach((cell, index) => {
+            cell.textContent = gameBoard[index];
+        });
+    }
 
 
-    
+
+
 
     });
