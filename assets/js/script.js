@@ -77,6 +77,15 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
     }
 
+    // Function to visually highlight the winning cells
+    function highlightWinningCells(pattern) {
+        let cells = document.querySelectorAll(".cell");
+        pattern.forEach((index) => {
+            cells[index].classList.add("winner");
+            cells[index].classList.add(gameBoard[index]);
+        });
+    }
+
 
 
 
