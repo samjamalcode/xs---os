@@ -86,6 +86,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Reset the game state to start a new game
+    window.resetGame = function () {
+        gameBoard = ["", "", "", "", "", "", "", "", ""];
+        currentPlayer = "X";
+        status.textContent = `Player ${currentPlayer}'s turn`;
+        const cells = document.querySelectorAll(".cell");
+        cells.forEach((cell) => {
+            cell.classList.remove("winner", "X", "O");
+            cell.textContent = "";
+        });
+        computerTurnEnabled = false;
+        playerMoves = 0;
+    };
+
 
 
 
