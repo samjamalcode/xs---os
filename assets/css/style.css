@@ -115,7 +115,7 @@ footer {
 @media (min-width: 768px) {
     .hero-section {
         padding: 30px;
-        height: 77vh;
+        height: 100vh;
     }
 
     #left-column,
@@ -140,6 +140,9 @@ footer {
     }
 
     footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
         font-size: 2rem;
     }
 }
