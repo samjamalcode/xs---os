@@ -5,6 +5,7 @@
 body {
     margin: 0;
     padding: 0;
+    max-width: 100%;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -93,12 +94,10 @@ footer {
 
     .hero-section {
         /* Height set to auto for smaller screens */
-        height: auto;
+        /* height: auto; */
     }
 
     footer {
-        /* keep the footer static on smaller devices */
-        position: static;
         font-size: 1.4rem;
     }
 
