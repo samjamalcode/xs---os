@@ -95,7 +95,7 @@ footer {
 
     .hero-section {
         /* Height set to auto for smaller screens */
-        /* height: auto; */
+        height: auto;
     }
 
     footer {
